@@ -10,6 +10,8 @@ body {
 ul,
 ol {
     list-style: none;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
 }
 input {
     padding: 8px;
@@ -135,9 +137,8 @@ h6 {
     width: 100px;
     max-width: 100%;
 }
-ol,
-ul {
-    list-style: none;
+.cat_image {
+    cursor: pointer;
 }
 .error {
     opacity: 1;
