@@ -14,7 +14,8 @@
         catNameIn = document.querySelector(".cat_clicker .cat_name"),
         catImageIn = document.querySelector(".cat_clicker .cat_imageUrl"),
         catCountIn = document.querySelector(".cat_clicker .cat_clicks"),
-        error = document.querySelector(".cat_clicker .error");
+        error = document.querySelector(".cat_clicker .error"),
+        removeButton = document.querySelector(".cat_clicker .btn.remove");
 
     var model = {
         currentCat: null,
@@ -71,6 +72,9 @@
         },
         removeCat: function(index) {
             model.cats.splice( index, 1 );
+            this.setCat(0);
+            catView();
+            catListView();
         },
         addCat: function() {
             model.cats.push({
@@ -124,20 +128,13 @@
             catList.insertAdjacentHTML("beforeend", `
                 <li><button class="btn margin-b-16">` 
                 + cats[i].name +
-                `</button><span class="close">x</span></li>
+                `</button></li>
             `);
 
             (function(index) {
                 catList.children[index].addEventListener("click", function() {
                     controller.setCat(index);
                     controller.setClass(index);
-                    catView();
-                });
-                catList.children[index].lastChild.addEventListener("click", function(e) {
-                    e.stopPropagation();
-                    controller.removeCat(index);
-                    controller.setCat(0);
-                    catListView();
                     catView();
                 });
             })(i);
@@ -185,6 +182,9 @@
         controller.increment();
     });
 
+    removeButton.addEventListener("click", function() {
+        controller.removeCat(controller.getCurrentCat)
+    });
     controller.init();
 
 })();

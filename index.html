@@ -157,21 +157,23 @@
 
                 <ul class="cat_list col-s-4 col-m-4 col-l-3">
                 </ul>
-
+                <div class="row margin-b-16">
+                    <button class="btn remove">Remove</button>
+                </div>
                 <div class="admin row content">
-                <button class="btn admin_button margin-b-16">Add cat</button>
-                <form class="admin_form hiden">
-                    <input id="catNameIn" type="text" minlength="3" class="cat_name" placeholder="Cat name">
-                    <select  id="catImageIn" class="cat_imageUrl" value="Image URL">
-                        <option value="img/cat1.jpg">Cat1</option>
-                        <option value="img/cat2.jpg">Cat2</option>
-                        <option value="img/cat3.jpg">Cat3</option>
-                    </select> 
-                    <input id="catCountIn" type="number" min="0" class="cat_clicks" placeholder="Clicks">
-                    <button class="btn submit margin-t-16">Submit</button>
-                    <button class="btn cancel margin-t-16">Cancel</button>
-                    <span class="error hide">Please verify your input</span>
-                </form>
+                    <button class="btn admin_button margin-b-16">Add cat</button>
+                    <form class="admin_form hiden">
+                        <input id="catNameIn" type="text" minlength="3" class="cat_name" placeholder="Cat name">
+                        <select  id="catImageIn" class="cat_imageUrl" value="Image URL">
+                            <option value="img/cat1.jpg">Cat1</option>
+                            <option value="img/cat2.jpg">Cat2</option>
+                            <option value="img/cat3.jpg">Cat3</option>
+                        </select> 
+                        <input id="catCountIn" type="number" min="0" class="cat_clicks" placeholder="Clicks">
+                        <button class="btn submit margin-t-16">Submit</button>
+                        <button class="btn cancel margin-t-16">Cancel</button>
+                        <span class="error hide">Please verify your input</span>
+                    </form>
                 </div>
             </div>
             </div>
