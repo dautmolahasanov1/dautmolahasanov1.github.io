@@ -242,10 +242,10 @@ h6 {
 .overlay .closebtn {
     position: absolute;
     top: 0px;
-    right: 0px;
+    right: 12px;
     padding: 0;
-    font-size: 60px;
-    line-height: 40px;
+    font-size: 50px;
+    line-height: 35px;
 }
 @media screen and (max-height: 501px) {
     .overlay a {
@@ -253,8 +253,10 @@ h6 {
     }
     .overlay .closebtn {
         font-size: 40px;
-        top: 15px;
-        right: 35px;
+        right: 16px;
+    }
+    .overlay-content {
+        margin-top: 0;
     }
 }
 @media (max-width: 501px) {
