@@ -31,6 +31,28 @@ input, select {
     cursor: pointer;
 }
 
+.main_cat {
+    background-image: url(../img/main-cat.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 350px;
+}
+
+.media img {
+    transition: all 0.15s ease;
+}
+.media img:hover {
+    transform: scale(1.1);
+}
+.media img:active {
+    transform: skew(5deg,0deg);
+}
+
+canvas {
+    display: block;
+    margin: auto;
+}
+
 .close:hover {
     color: #0099ff;
 }
