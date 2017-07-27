@@ -15,13 +15,32 @@
             <div class="nav-bar">
                 <a href="#home" class="btn no-border"><b>CAT</b> Heaven</a>
                 <!-- Float links to the right. Hide them on small screens -->
-                <div class="menu float-right">
-                    <a href="#link1" class="btn no-border">Home</a>
+                <div class="menu-desktop float-right">
                     <a href="#link2" class="btn no-border">About</a>
-                    <a href="#link3" class="btn no-border">Contact</a>
+                    <a href="#cat_clicker" class="btn no-border">Cat clicker</a>
+                    <a href="#link3" class="btn no-border">Snake game</a>
+                </div>
+                <div class="menu-mobile float-right" onclick="openNav()">
+                    <div class="container">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
                 </div>
             </div>
         </nav>
+
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="#link1" class="btn no-border">Home</a>
+                <a href="#link2" class="btn no-border">About</a>
+                <a href="#cat_clicker" class="btn no-border">Cat clicker</a>
+                <a href="#link3" class="btn no-border">Snake game</a>
+            </div>
+        </div>
+
 
         <!-- Header -->
         <header class="content" id="home">
@@ -130,7 +149,7 @@
                 </div>
             </div>
 
-            <div class="content cat_clicker">
+            <div class="content cat_clicker" id="cat_clicker">
                 <div class="content">
                 <div class="header_container"></div>
                 <!-- HANDLEBARS -->
@@ -177,7 +196,7 @@
                 </div>
             </div>
             </div>
-             <div class="row text-content" id="link2">
+             <div class="row text-content" id="link3">
                 <h2 class="header">Play the snake game</h2>
                 <button class="btn play margin-b-16">Play🐍!</button>
             </div>
@@ -185,7 +204,7 @@
 
             </div>
 
-            <div class="row text-content" id="link3">
+            <div class="row text-content" id="link4">
             <h2 class="class">Contact</h2>
             <p>Lets get in touch and talk about your and our next project.</p>
             <form action="#" target="_blank">

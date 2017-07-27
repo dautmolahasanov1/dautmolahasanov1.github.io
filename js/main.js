@@ -189,6 +189,14 @@
 
 })();
 
+/* the menu */
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
+
 /* ====== Handlebars testing ====== */
 (function () {
     var context = {
@@ -197,10 +205,7 @@
         adminForm = document.querySelector(".admin_form"),
         headerSource = document.querySelector("#header-template"),
         headerTemplate = Handlebars.compile(headerSource.innerHTML),
-
         headerHtml = headerTemplate(context),
         header = document.querySelector(".header_container");
-
-    header.insertAdjacentHTML("afterbegin", headerHtml);
-
+        header.insertAdjacentHTML("afterbegin", headerHtml);
 })();

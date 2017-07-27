@@ -16,51 +16,45 @@ ol {
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
 }
-input, select {
+input,
+select {
     padding: 8px;
     display: block;
     border: none;
     border-bottom: 1px solid #ccc;
     width: 100%;
 }
-
 .close {
     position: relative;
     left: -15px;
     padding: 0px;
     cursor: pointer;
 }
-
 .main_cat {
     background-image: url(../img/main-cat.jpeg);
     background-position: center;
     background-size: cover;
     height: 350px;
 }
-
 .media img {
-    transition: all 0.15s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 .media img:hover {
     transform: scale(1.1);
 }
 .media img:active {
-    transform: skew(5deg,0deg);
+    transform: skew(5deg, 0deg);
 }
-
 canvas {
     display: block;
     margin: auto;
 }
-
-.close:hover {
-    color: #0099ff;
-}
-
 .relative {
     position: relative;
 }
-
 img {
     max-width: 100%;
 }
@@ -71,7 +65,6 @@ a {
 header {
     position: relative;
 }
-
 .title-header {
     position: absolute;
     top: 50%;
@@ -93,10 +86,10 @@ header {
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
-    border: 1px solid #dcdcdc;
+    border: 1px solid #ccc;
     display: inline-block;
     cursor: pointer;
-    color: #666666;
+    color: #666;
     font-size: 16px;
     padding: 7px 15px;
     text-decoration: none;
@@ -172,6 +165,9 @@ h6 {
     display: block;
 }
 .admin_form {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     max-height: 400px;
 }
@@ -188,6 +184,9 @@ h6 {
     display: block;
     font-size: 14px;
     color: darkred;
+    -webkit-transition: all 0.35s ease;
+    -moz-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
     transition: all 0.35s ease;
 }
 .hiden {
@@ -201,13 +200,78 @@ h6 {
     float: left;
     padding: 0 8px;
 }
-@media (max-width: 501px) {
-    nav .menu {
-        display: none;
+/* for the menu*/
+
+.overlay {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.85);
+    overflow: hidden;
+    -webkit-transition: all 0.35s ease;
+    -moz-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #ccc;
+    display: block;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.overlay a:hover,
+.overlay a:focus {
+    color: #666;
+}
+.overlay .closebtn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 0;
+    font-size: 60px;
+    line-height: 40px;
+}
+@media screen and (max-height: 501px) {
+    .overlay a {
+        font-size: 20px
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
     }
 }
-/*only for small screen*/
-
+@media (max-width: 501px) {
+    nav .menu-desktop {
+        display: none;
+    }
+    .menu-mobile .container {
+        display: inline-block;
+        cursor: pointer;
+    }
+    .bar {
+        width: 35px;
+        height: 2px;
+        background-color: #777;
+        margin: 8px 0;
+    }
+}
 @media (max-width: 600px) {
     .col-s-1 {
         width: 8.33333%
@@ -276,8 +340,6 @@ h6 {
         margin-left: 83.33333%
     }
 }
-/*Only for medium screen*/
-
 @media (min-width: 601px) and (max-width: 800px) {
     .col-m-1 {
         width: 8.33333%
@@ -346,8 +408,6 @@ h6 {
         margin-left: 83.33333%
     }
 }
-/*Only for large screen*/
-
 @media (min-width: 801px) {
     .col-l-1 {
         width: 8.33333%
