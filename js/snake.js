@@ -1,7 +1,8 @@
 var s,
     scl = 20,
     food;
-    play = document.querySelector(".play");
+    play = document.querySelector(".play"),
+    snake = document.querySelector("#snake");
 
 function setup() {
     var canvas = createCanvas(300, 300);
@@ -29,7 +30,6 @@ function draw() {
     fill(255, 0, 100);
     rect(food.x, food.y, scl, scl);
 }
-
 function keyPressed(e) {
 	e.preventDefault();
     if (keyCode === UP_ARROW && s.yspeed !== 1) {
@@ -107,8 +107,8 @@ function Snake() {
         rect(this.x, this.y, scl, scl);
     }
 }
-document.addEventListener('touchstart', handleTouchStart, false);
-document.addEventListener('touchmove', handleTouchMove, false);
+snake.addEventListener('touchstart', handleTouchStart, false);
+snake.addEventListener('touchmove', handleTouchMove, false);
 var xDown = null,
 	yDown = null;
     
