@@ -139,16 +139,16 @@ h6 {
     margin-top: 16px;
 }
 .padding-b-16 {
-    margin-bottom: 16px;
+    padding-bottom: 16px;
 }
 .padding-l-16 {
-    margin-left: 16px;
+    padding-left: 16px;
 }
 .padding-r-16 {
-    margin-right: 16px;
+    padding-right: 16px;
 }
 .padding-t-16 {
-    margin-top: 16px;
+    padding-top: 16px;
 }
 .float-right {
     float: right;

@@ -3,7 +3,13 @@
     <head>
         <title>No dogs allowed</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <!-- Chrome, Firefox OS and Opera -->
+        <meta name="theme-color" content="#ccc">
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#ccc">
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="#ccc">
         <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" href="cat.png" type="image/x-icon">
@@ -13,14 +19,14 @@
         <!-- Navbar (sit on top) -->
         <nav class="nav">
             <div class="nav-bar">
-                <a href="#home" class="btn no-border"><b>CAT</b> Heaven</a>
+                <a href="#home" class="btn no-border"><strong>CAT</strong> Heaven</a>
                 <!-- Float links to the right. Hide them on small screens -->
                 <div class="menu-desktop float-right">
                     <a href="#link2" class="btn no-border">About</a>
                     <a href="#cat_clicker" class="btn no-border">Cat clicker</a>
                     <a href="#link3" class="btn no-border">Snake game</a>
                 </div>
-                <div class="menu-mobile float-right" onclick="openNav()">
+                <div class="menu-mobile float-right padding-r-16" onclick="openNav()">
                     <div class="container">
                         <div class="bar"></div>
                         <div class="bar"></div>
