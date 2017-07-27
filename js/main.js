@@ -183,7 +183,7 @@
     });
 
     removeButton.addEventListener("click", function() {
-        controller.removeCat(controller.getCurrentCat)
+        controller.removeCat(controller.getCats().indexOf(controller.getCurrentCat()));
     });
     controller.init();
 
