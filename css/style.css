@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+*:focus {
+    outline-color: #ccc;
+}
 body {
     margin: 0;
     font-family: Verdana, sans-serif;
@@ -19,9 +22,6 @@ input {
     border: none;
     border-bottom: 1px solid #ccc;
     width: 100%;
-}
-*:focus {
-    outline-color: #ccc;
 }
 img {
     max-width: 100%;
