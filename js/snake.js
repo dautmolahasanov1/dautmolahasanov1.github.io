@@ -29,6 +29,7 @@ function draw() {
     fill(255, 0, 100);
     rect(food.x, food.y, scl, scl);
 }
+
 function keyPressed(e) {
 	e.preventDefault();
     if (keyCode === UP_ARROW && s.yspeed !== 1) {
