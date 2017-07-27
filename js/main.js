@@ -69,6 +69,9 @@
         setCat: function(index) {
             model.currentCat = model.cats[index];
         },
+        removeCat: function(index) {
+            model.cats.splice( index, 1 );
+        },
         addCat: function() {
             model.cats.push({
                 name: catNameIn.value,
@@ -119,7 +122,9 @@
         catList.innerHTML = "";
         for (var i = 0; i < cats.length; i++) {
             catList.insertAdjacentHTML("beforeend", `
-                <li><button class="btn margin-b-16">` + cats[i].name +`</button></li>
+                <li><button class="btn margin-b-16">` 
+                + cats[i].name +
+                `</button><span class="close">x</span></li>
             `);
 
             (function(index) {
@@ -128,18 +133,30 @@
                     controller.setClass(index);
                     catView();
                 });
+                catList.children[index].lastChild.addEventListener("click", function(e) {
+                    e.stopPropagation();
+                    controller.removeCat(index);
+                    controller.setCat(0);
+                    catListView();
+                    catView();
+                });
             })(i);
         }
     };
 
     function catView() {
         var currentCat = controller.getCurrentCat();
-
-        catImage.setAttribute("src", currentCat.image);
-        catName.innerHTML = currentCat.name;
-        catCount.innerHTML = currentCat.count;
-        catLevel.innerHTML = controller.level(currentCat.count);
-
+        if(currentCat) {
+            catImage.setAttribute("src", currentCat.image);
+            catName.innerHTML = currentCat.name;
+            catCount.innerHTML = currentCat.count;
+            catLevel.innerHTML = controller.level(currentCat.count);
+        } else {
+            catImage.innerHTML = "";
+            catName.innerHTML = "";
+            catCount.innerHTML = "";
+            catLevel.innerHTML = "";
+        }
     };
 
     function adminView() {

@@ -16,13 +16,29 @@ ol {
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
 }
-input {
+input, select {
     padding: 8px;
     display: block;
     border: none;
     border-bottom: 1px solid #ccc;
     width: 100%;
 }
+
+.close {
+    position: relative;
+    left: -15px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #0099ff;
+}
+
+.relative {
+    position: relative;
+}
+
 img {
     max-width: 100%;
 }

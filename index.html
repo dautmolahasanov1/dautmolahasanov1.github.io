@@ -146,8 +146,9 @@
           <div class="row content">
             <div class="cat_area col-s-8 col-m-8 col-l-9">
               <div class="cat">
-                <div class="image_div">
-                  <img src="" alt="" class="cat_image" id="catImage">
+                <div class="image_div relative">
+                    <div class="thumb-title">Click me</div>
+                    <img src="" alt="" class="cat_image" id="catImage">
                 </div>
                 <div class="info">
                   <h3 class="name no-border"></span>
@@ -164,7 +165,11 @@
               <button class="btn admin_button margin-b-16">Add cat</button>
               <form class="admin_form hiden">
                 <input id="catNameIn" type="text" minlength="3" class="cat_name" placeholder="Cat name">
-                <input id="catImageIn" type="text" minlength="6" class="cat_imageUrl" placeholder="Image URL">
+                <select  id="catImageIn" class="cat_imageUrl" value="Image URL">
+                    <option value="img/cat1.jpg">Cat1</option>
+                    <option value="img/cat2.jpg">Cat2</option>
+                    <option value="img/cat3.jpg">Cat3</option>
+                </select> 
                 <input id="catCountIn" type="number" min="0" class="cat_clicks" placeholder="Clicks">
                 <button class="btn submit margin-t-16">Submit</button>
                 <button class="btn cancel margin-t-16">Cancel</button>
@@ -186,9 +191,7 @@
             <button class="btn margin-t-16" type="submit">Send message</button>
           </form>
         </div>
-
       </div>
-
       <footer class="class">
         <p>by Daut</p>
       </footer>
