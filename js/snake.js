@@ -1,6 +1,7 @@
 var s,
     scl = 20,
     food;
+    play = document.querySelector(".play");
 
 function setup() {
     var canvas = createCanvas(300, 300);
@@ -43,7 +44,15 @@ function keyPressed(e) {
 function Snake() {
     this.x = 0;
     this.y = 0;
-    this.xspeed = 1;
+    this.xspeed = 0;
+    play.addEventListener('click', function () {
+        s.x = 0;
+        s.y = 0;
+        s.xspeed = 1;
+        s.yspeed = 0;
+        s.total = 0;
+        s.tail = [];
+    });
     this.yspeed = 0;
     this.total = 0;
     this.tail = [];
