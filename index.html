@@ -17,7 +17,7 @@
 
     <body>
         <!-- Navbar (sit on top) -->
-        <nav class="nav">
+        <nav class="nav fixed">
             <div class="nav-bar">
                 <a href="#home" class="btn no-border"><strong>CAT</strong> Heaven</a>
                 <!-- Float links to the right. Hide them on small screens -->
@@ -61,62 +61,24 @@
                 <h2 class="header">Home</h2>
             </div>
 
-            <div class="row content">
-                <div class="col-s-12 col-m-6 col-l-3 margin-b-16">
-                    <div class="media">
-                        <div class="thumb-title">Goldie</div>
-                        <img src="img/cat1.jpg" alt="Cute cat">
-                    </div>
-                </div>
-                <div class="col-s-12 col-m-6 col-l-3 margin-b-16">
-                    <div class="media">
-                        <div class="thumb-title">Enigma</div>
-                        <img src="img/cat2.jpg" alt="Cute cat">
-                    </div>
-                </div>
-                <div class="col-s-12 col-m-6 col-l-3 margin-b-16">
-                    <div class="media">
-                        <div class="thumb-title">Fantasy</div>
-                        <img src="img/cat3.jpg" alt="Cute cat">
-                    </div>
-                </div>
-                <div class="col-s-12 col-m-6 col-l-3 margin-b-16">
-                    <div class="media">
-                        <div class="thumb-title">Kitkat</div>
-                        <img src="img/cat4.jpg" alt="Cute cat">
-                    </div>
-                </div>
-        </div>
+            <div class="row content" id="cat_rows">
 
-            <div class="row content">
-                <div class="col-s-12 col-m-6 col-l-3 margin-b-16">
-                    <div class="media">
-                        <div class="thumb-title">Panda</div>
-                        <img src="img/cat5.jpg" alt="Cute cat">
+
+                <!-- HANDLEBARS -->
+                <script id="cat_template" type="text/x-handlebars-template">
+                    {{#each cats}}
+                    <div class="col-s-12 col-m-6 col-l-3 margin-b-16">
+                        <div class="media">
+                            <div class="thumb-title">{{name}}</div>
+                            <img src="{{image}}" alt="Cute cat">
+                        </div>
                     </div>
-                </div>
-                <div class="col-s-12 col-m-6 col-l-3 margin-b-16">
-                    <div class="media">
-                        <div class="thumb-title">Marshmallow</div>
-                        <img src="img/cat6.jpg" alt="Cute cat">
-                    </div>
-                </div>
-                <div class="col-s-12 col-m-6 col-l-3 margin-b-16">
-                    <div class="media">
-                        <div class="thumb-title">Snuggles</div>
-                        <img src="img/cat7.jpg" alt="Cute cat">
-                    </div>
-                </div>
-                <div class="col-s-12 col-m-6 col-l-3 margin-b-16">
-                    <div class="media">
-                        <div class="thumb-title">Sweetness</div>
-                        <img src="img/cat8.jpeg" alt="Cute cat">
-                    </div>
-                </div>
-            </div>
+                    {{/each}}
+                </script>
+                <!-- HANDLEBARS -->
 
             <!-- About Section -->
-            <div class="row text-content" id="link2">
+            <div class="row text-content text-justify" id="link2">
                 <h2 class="header">About</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
                 occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation

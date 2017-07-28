@@ -189,6 +189,18 @@ h6 {
     -o-transition: all 0.35s ease;
     transition: all 0.35s ease;
 }
+
+.text-justify {
+    text-align: justify;
+}
+
+.nav.fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background: #fff;
+}
+
 .hiden {
     max-height: 0px;
     overflow: hidden;
@@ -262,6 +274,9 @@ h6 {
 @media (max-width: 501px) {
     nav .menu-desktop {
         display: none;
+    }
+    .menu-mobile {
+        line-height: 14px;
     }
     .menu-mobile .container {
         display: inline-block;

@@ -199,13 +199,61 @@ function closeNav() {
 
 /* ====== Handlebars testing ====== */
 (function () {
+    "use strict"
+
     var context = {
-            header1:"Cat Clicker"
+            header1:"Cat Clicker",
+            cats: [
+                {
+                    name:"Goldie",
+                    image:"img/cat1.jpg"
+                },
+                {
+                    name:"Enigma",
+                    image:"img/cat2.jpg"
+                },
+                {
+                    name:"Fantasy",
+                    image:"img/cat3.jpg"
+                },
+                {
+                    name:"Kitkat",
+                    image:"img/cat4.jpg"
+                },
+                {
+                    name:"Panda",
+                    image:"img/cat5.jpg"
+                },
+                {
+                    name:"Marshmallow",
+                    image:"img/cat6.jpg"
+                },
+                {
+                    name:"Snuggles",
+                    image:"img/cat7.jpg"
+                },
+                {
+                    name:"Sweetness",
+                    image:"img/cat8.jpeg"
+                }
+            ]
         },
-        adminForm = document.querySelector(".admin_form"),
+
+        header = document.querySelector(".header_container"),
         headerSource = document.querySelector("#header-template"),
         headerTemplate = Handlebars.compile(headerSource.innerHTML),
         headerHtml = headerTemplate(context),
-        header = document.querySelector(".header_container");
-        header.insertAdjacentHTML("afterbegin", headerHtml);
+
+        /* ====== The cats part ====== */
+        catRows = document.querySelector("#cat_rows"),
+        catSource = document.querySelector("#cat_template"),
+        catTemplate = Handlebars.compile(catSource.innerHTML),
+        catHtml = catTemplate(context);
+
+    catRows.insertAdjacentHTML("afterbegin", catHtml);
+
+    header.insertAdjacentHTML("afterbegin", headerHtml);
+
+        
+
 })();
