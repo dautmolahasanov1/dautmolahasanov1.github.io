@@ -1,7 +1,7 @@
 var s,
     scl = 20,
     food;
-    play = document.querySelector(".play"),
+play = document.querySelector(".play"),
     snake = document.querySelector("#snake");
 
 function setup() {
@@ -11,6 +11,7 @@ function setup() {
     frameRate(8);
     pickLocation();
 }
+
 function pickLocation() {
     var cols = floor(width / scl),
         rows = floor(height / scl);
@@ -18,6 +19,7 @@ function pickLocation() {
     food = createVector(floor(random(cols)), floor(random(rows)));
     food.mult(scl);
 }
+
 function draw() {
     background(51);
     if (s.eat(food)) {
@@ -30,22 +32,28 @@ function draw() {
     fill(255, 0, 100);
     rect(food.x, food.y, scl, scl);
 }
+
 function keyPressed(e) {
     if (keyCode === UP_ARROW && s.yspeed !== 1) {
+        e.preventDefault();
         s.dir(0, -1);
     } else if (keyCode === DOWN_ARROW && s.yspeed !== -1) {
+        e.preventDefault();
         s.dir(0, 1);
     } else if (keyCode === RIGHT_ARROW && s.xspeed !== -1) {
+        e.preventDefault();
         s.dir(1, 0);
     } else if (keyCode === LEFT_ARROW && s.xspeed !== 1) {
+        e.preventDefault();
         s.dir(-1, 0);
     }
 }
+
 function Snake() {
     this.x = 0;
     this.y = 0;
     this.xspeed = 0;
-    play.addEventListener('click', function () {
+    play.addEventListener('click', function() {
         s.x = 0;
         s.y = 0;
         s.xspeed = 1;
@@ -72,7 +80,7 @@ function Snake() {
     this.death = function() {
         for (var i = 0; i < this.tail.length; i++) {
             var pos = this.tail[i],
-            	d = dist(this.x, this.y, pos.x, pos.y);
+                d = dist(this.x, this.y, pos.x, pos.y);
             if (d < 1) {
                 this.x = 0;
                 this.y = 0;
@@ -109,10 +117,10 @@ function Snake() {
 snake.addEventListener('touchstart', handleTouchStart, false);
 snake.addEventListener('touchmove', handleTouchMove, false);
 var xDown = null,
-	yDown = null;
-    
+    yDown = null;
+
 function handleTouchStart(e) {
-e.preventDefault();
+    e.preventDefault();
     xDown = e.touches[0].clientX;
     yDown = e.touches[0].clientY;
 };
@@ -121,7 +129,7 @@ function handleTouchMove(e) {
     if (!xDown || !yDown) {
         return;
     }
-	
+
     var xUp = e.touches[0].clientX,
         yUp = e.touches[0].clientY,
         xDiff = xDown - xUp,
