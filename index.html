@@ -1,168 +1,169 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>No dogs allowed</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <!-- Chrome, Firefox OS and Opera -->
-        <meta name="theme-color" content="#ccc">
-        <!-- Windows Phone -->
-        <meta name="msapplication-navbutton-color" content="#ccc">
-        <!-- iOS Safari -->
-        <meta name="apple-mobile-web-app-status-bar-style" content="#ccc">
-        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" href="cat-multi-size.ico" type="image/x-icon">
-    </head>
 
-    <body>
-        <!-- Navbar (sit on top) -->
-        <nav class="nav fixed">
-            <div class="nav-bar">
-                <a href="#home" class="btn no-border"><strong>CAT</strong> Heaven</a>
-                <!-- Float links to the right. Hide them on small screens -->
-                <div class="menu-desktop float-right">
-                    <a href="#link2" class="btn no-border">About</a>
-                    <a href="#cat_clicker" class="btn no-border">Cat clicker</a>
-                    <a href="#link3" class="btn no-border">Snake game</a>
-                </div>
-                <div class="menu-mobile float-right padding-r-16" onclick="openNav()">
-                    <div class="container">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+<head>
+    <title>No dogs allowed</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#ccc">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#ccc">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ccc">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="cat-multi-size.ico" type="image/x-icon">
+</head>
 
-        <div id="myNav" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div class="overlay-content" onclick="closeNav()">
-                <a href="#link1" class="btn no-border">Home</a>
+<body>
+    <!-- Navbar (sit on top) -->
+    <nav class="nav fixed">
+        <div class="nav-bar">
+            <a href="#home" class="btn no-border"><strong>CAT</strong> Heaven</a>
+            <!-- Float links to the right. Hide them on small screens -->
+            <div class="menu-desktop float-right">
                 <a href="#link2" class="btn no-border">About</a>
                 <a href="#cat_clicker" class="btn no-border">Cat clicker</a>
                 <a href="#link3" class="btn no-border">Snake game</a>
             </div>
+            <div class="menu-mobile float-right padding-r-16" onclick="openNav()">
+                <div class="container">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content" onclick="closeNav()">
+            <a href="#link1" class="btn no-border">Home</a>
+            <a href="#link2" class="btn no-border">About</a>
+            <a href="#cat_clicker" class="btn no-border">Cat clicker</a>
+            <a href="#link3" class="btn no-border">Snake game</a>
+        </div>
+    </div>
+
+
+    <!-- Header -->
+    <header class="content" id="home">
+        <div class="main_cat">
+            <div class="title-header white">
+                <h1 class="class">Who likes cats</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="row text-content" id="link1">
+            <h2 class="header">Home</h2>
         </div>
 
-
-        <!-- Header -->
-        <header class="content" id="home">
-            <div class="main_cat">
-                <div class="title-header white">
-                    <h1 class="class">Who likes cats</h1>
-                </div>
-            </div>
-        </header>
-
-        <div class="main-content">
-            <div class="row text-content" id="link1">
-                <h2 class="header">Home</h2>
-            </div>
-            
-            <div class="row content" id="cat_rows">
-                <!-- HANDLEBARS -->
-                <script id="cat_template" type="text/x-handlebars-template">
-                    {{#each cats}}
-                    <div class="col-s-12 col-m-6 col-l-3 margin-b-16">
-                        <div class="media">
-                            <div class="thumb-title">{{name}}</div>
-                            <img src="{{image}}" alt="Cute cat">
-                        </div>
+        <div class="row content" id="cat_rows">
+            <!-- HANDLEBARS -->
+            <script id="cat_template" type="text/x-handlebars-template">
+                {{#each cats}}
+                <div class="col-s-12 col-m-6 col-l-3 margin-b-16">
+                    <div class="media">
+                        <div class="thumb-title">{{name}}</div>
+                        <img src="{{image}}" alt="Cute cat">
                     </div>
-                    {{/each}}
-                </script>
-                <!-- HANDLEBARS -->
-            </div>
+                </div>
+                {{/each}}
+            </script>
+            <!-- HANDLEBARS -->
+        </div>
 
-            <!-- About Section -->
-            <div class="row text-content text-justify" id="link2">
-                <h2 class="header">About</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        <!-- About Section -->
+        <div class="row text-content text-justify" id="link2">
+            <h2 class="header">About</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur
+                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                 ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="person col-s-12 col-m-6 col-l-4">
+                <img src="img/team-cat1.jpg" alt="John">
+                <h3>Cashmere</h3>
+                <p class="title">Professional sleeper</p>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                <p>
+                    <button class="btn">Contact</button>
                 </p>
             </div>
-
-            <div class="row">
-                <div class="person col-s-12 col-m-6 col-l-4">
-                    <img src="img/team-cat1.jpg" alt="John">
-                    <h3>Cashmere</h3>
-                    <p class="title">Professional sleeper</p>
-                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                    <p>
-                        <button class="btn">Contact</button>
-                    </p>
-                </div>
-                <div class="person col-s-12 col-m-6 col-l-4">
-                    <img src="img/team-cat3.jpg" alt="John">
-                    <h3>Cutesy</h3>
-                    <p class="title">Professional eater</p>
-                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                    <p>
-                        <button class="btn">Contact</button>
-                    </p>
-                </div>
-                <div class="person col-s-12 col-m-8 col-m-off-2 col-l-4">
-                    <img src="img/team-cat2.jpg" alt="John">
-                    <h3>Cinnamon and Cuddles</h3>
-                    <p class="title">Professional sitters</p>
-                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                    <p>
-                        <button class="btn">Contact</button>
-                    </p>
-                </div>
+            <div class="person col-s-12 col-m-6 col-l-4">
+                <img src="img/team-cat3.jpg" alt="John">
+                <h3>Cutesy</h3>
+                <p class="title">Professional eater</p>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                <p>
+                    <button class="btn">Contact</button>
+                </p>
             </div>
+            <div class="person col-s-12 col-m-8 col-m-off-2 col-l-4">
+                <img src="img/team-cat2.jpg" alt="John">
+                <h3>Cinnamon and Cuddles</h3>
+                <p class="title">Professional sitters</p>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                <p>
+                    <button class="btn">Contact</button>
+                </p>
+            </div>
+        </div>
 
-            <div class="content cat_clicker" id="cat_clicker">
-                <div class="content">
+        <div class="content cat_clicker" id="cat_clicker">
+            <div class="content">
                 <div class="header_container"></div>
                 <!-- HANDLEBARS -->
                 <script id="header-template" type="text/x-handlebars-template">
                     <div class="row text-content">
-                    <h2>{{header1}}</h2>
+                        <h2>{{header1}}</h2>
                 </script>
                 <!-- HANDLEBARS -->
                 </div>
                 <div class="row content">
                     <div class="cat_area col-s-8 col-m-8 col-l-9">
-                    <div class="cat">
-                        <div class="image_div relative">
-                            <div class="thumb-title">Click me</div>
-                            <img src="" alt="" class="cat_image" id="catImage">
-                        </div>
-                        <div class="info">
-                        <h3 class="name no-border"></h3>
-                        <h2 class="count no-border"></h2>
-                        <h2 class="level no-border"></h2>
+                        <div class="cat">
+                            <div class="image_div relative">
+                                <div class="thumb-title">Click me</div>
+                                <img src="" alt="" class="cat_image" id="catImage">
+                            </div>
+                            <div class="info">
+                                <h3 class="name no-border"></h3>
+                                <h2 class="count no-border"></h2>
+                                <h2 class="level no-border"></h2>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <ul class="cat_list col-s-4 col-m-4 col-l-3">
-                </ul>
-                <div class="row margin-b-16">
-                    <button class="btn remove">Remove</button>
-                </div>
-                <div class="admin row content">
-                    <button class="btn admin_button margin-b-16">Add cat</button>
-                    <form class="admin_form hiden">
-                        <input id="catNameIn" type="text" minlength="3" class="cat_name" placeholder="Cat name">
-                        <select  id="catImageIn" class="cat_imageUrl" value="Image URL">
+                    <ul class="cat_list col-s-4 col-m-4 col-l-3">
+                    </ul>
+                    <div class="row margin-b-16">
+                        <button class="btn remove">Remove</button>
+                    </div>
+                    <div class="admin row content">
+                        <button class="btn admin_button margin-b-16">Add cat</button>
+                        <form class="admin_form hiden">
+                            <input id="catNameIn" type="text" minlength="3" class="cat_name" placeholder="Cat name">
+                            <select id="catImageIn" class="cat_imageUrl" value="Image URL">
                             <option value="img/cat1.jpg">Cat1</option>
                             <option value="img/cat2.jpg">Cat2</option>
                             <option value="img/cat3.jpg">Cat3</option>
-                        </select> 
-                        <input id="catCountIn" type="number" min="0" class="cat_clicks" placeholder="Clicks">
-                        <button class="btn submit margin-t-16">Submit</button>
-                        <button class="btn cancel margin-t-16">Cancel</button>
-                        <span class="error hide">Please verify your input</span>
-                    </form>
+                        </select>
+                            <input id="catCountIn" type="number" min="0" class="cat_clicks" placeholder="Clicks">
+                            <button class="btn submit margin-t-16">Submit</button>
+                            <button class="btn cancel margin-t-16">Cancel</button>
+                            <span class="error hide">Please verify your input</span>
+                        </form>
+                    </div>
                 </div>
             </div>
-            </div>
-             <div class="row text-content" id="link3">
+            <div class="row text-content" id="link3">
                 <h2 class="header">Play the snake game</h2>
                 <button class="btn play margin-b-16">Play🐍!</button>
             </div>
@@ -171,15 +172,15 @@
             </div>
 
             <div class="row text-content" id="link4">
-            <h2>Contact</h2>
-            <p>Lets get in touch and talk about your and our next project.</p>
-            <form action="#" target="_blank">
-                <input type="text" placeholder="Name" required="" name="Name">
-                <input type="text" placeholder="Email" required="" name="Email">
-                <input type="text" placeholder="Subject" required="" name="Subject">
-                <input type="text" placeholder="Comment" required="" name="Comment">
-                <a href="mailto:daut.molahasanov@gmail.com?subject=Your website&body=Hi, I like your website." class="btn margin-t-16">Send message</a>
-            </form>
+                <h2>Contact</h2>
+                <p>Lets get in touch and talk about your and our next project.</p>
+                <form action="#" target="_blank">
+                    <input type="text" placeholder="Name" required="" name="Name">
+                    <input type="text" placeholder="Email" required="" name="Email">
+                    <input type="text" placeholder="Subject" required="" name="Subject">
+                    <input type="text" placeholder="Comment" required="" name="Comment">
+                    <a href="mailto:daut.molahasanov@gmail.com?subject=Your website&body=Hi, I like your website." class="btn margin-t-16">Send message</a>
+                </form>
             </div>
         </div>
         <footer>
@@ -189,5 +190,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.js"></script>
         <script src="js/main.js"></script>
         <script src="js/snake.js"></script>
-    </body>
+</body>
+
 </html>

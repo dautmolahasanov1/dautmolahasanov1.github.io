@@ -34,17 +34,18 @@ function draw() {
 }
 
 function keyPressed(e) {
-    if (keyCode === UP_ARROW && s.yspeed !== 1) {
+
+    if (s.yspeed !== 0 || s.xspeed !== 0) {
         e.preventDefault();
+    }
+
+    if (keyCode === UP_ARROW && s.yspeed !== 1) {
         s.dir(0, -1);
     } else if (keyCode === DOWN_ARROW && s.yspeed !== -1) {
-        e.preventDefault();
         s.dir(0, 1);
     } else if (keyCode === RIGHT_ARROW && s.xspeed !== -1) {
-        e.preventDefault();
         s.dir(1, 0);
     } else if (keyCode === LEFT_ARROW && s.xspeed !== 1) {
-        e.preventDefault();
         s.dir(-1, 0);
     }
 }
